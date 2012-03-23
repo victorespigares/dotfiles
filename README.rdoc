@@ -2,6 +2,11 @@
 
 == Installation
 
-   git clone git://github.com/kron/dotfiles ~/dotfiles
-   cd ~/dotfiles
-   ./makesymlinks.sh
+    git clone git://github.com/kron/dotfiles ~/dotfiles
+    cd ~/dotfiles
+    ./makesymlinks.sh
+    git submodule update --init
+ 
+== Documentation
+    http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
+    http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/
