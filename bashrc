@@ -109,4 +109,13 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+# git auto completion
+if [ -f ~/dotfiles/git/git-completion.bash ]; then
+    source ~/dotfiles/git/git-completion.bash
+fi
+
+# git prompt helper
+if [ -f ~/dotfiles/git/git-prompt.bash ]; then
+    source ~/dotfiles/git/git-prompt.bash
+fi
 umask 002
