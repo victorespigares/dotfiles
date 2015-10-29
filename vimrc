@@ -10,9 +10,10 @@ set incsearch   " Incremental search
 "set hidden             " Hide buffers when they are abandoned
 "set mouse=a     " Enable mouse usage (all modes) in terminals
 set number      " Line numbers
+set ruler       " Status line in the bottom
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set list
 set listchars=tab:>.
