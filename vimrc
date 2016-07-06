@@ -11,6 +11,7 @@ set incsearch   " Incremental search
 "set mouse=a     " Enable mouse usage (all modes) in terminals
 set number      " Line numbers
 set ruler       " Status line in the bottom
+set autoindent  " Auto-indentation
 
 set tabstop=2
 set shiftwidth=2

@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/kr0n/Work/IWT/repos'
+let g:netrw_dirhist_2='/Users/kr0n/Work/IWT/repos/tools/iwtbounce/campaigns/iwt-blueprints'
+let g:netrw_dirhist_3='/Users/kr0n/Dropbox/Personal projects/VictorEspigares.com/theme/en/victorespigares/includes'
+let g:netrw_dirhist_4='/Users/kr0n/Work/IWT/repos/growthlab/signup/continue'
+let g:netrw_dirhist_5='/Users/kr0n/Work/IWT/repos/tools/iwtbounce/campaigns/iwt/15-life-experiments'
+let g:netrw_dirhist_6='/Users/kr0n/Work/IWT/repos/tools/iwtbounce/campaigns/iwt/30-business-ideas'
+let g:netrw_dirhist_7='/Users/kr0n/Work/IWT/repos/tools/iwtbounce/campaigns/assets'
+let g:netrw_dirhist_8='/Users/kr0n/Work/IWT/repos/iwtytbr/quiz-engine/templates/quiz/results'
+let g:netrw_dirhist_9='/Users/kr0n/Work/IWT/repos/iwtytbr/quiz-engine/routes'
