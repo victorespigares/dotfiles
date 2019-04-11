@@ -13,11 +13,13 @@ set number      " Line numbers
 set ruler       " Status line in the bottom
 set autoindent  " Auto-indentation
 
-set tabstop=2
-set shiftwidth=2
-set expandtab
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
+set softtabstop=-1
 set list
-set listchars=tab:>.
+set showbreak=↪\ 
+set listchars=tab:¦\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 hi Comment ctermfg=darkgray
 hi Search ctermfg=9 ctermbg=2
 set t_Co=256
