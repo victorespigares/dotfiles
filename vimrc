@@ -31,6 +31,9 @@ set cursorline
 set cursorcolumn
 colorscheme molokai
 
+" Show line numbers in Explorer mode: https://stackoverflow.com/questions/30249593/vim-show-line-numbers-when-using-explore
+let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
+
 " http://vim.wikia.com/wiki/Capitalize_words_and_regions_easily
 if (&tildeop)
   nmap gcw guw~l
