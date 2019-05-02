@@ -9,6 +9,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'git://github.com/tpope/vim-fugitive'
 "Plugin 'https://github.com/groenewege/vim-less.git'
 Plugin 'git://github.com/tpope/vim-surround'
 "Plugin 'https://github.com/kchmck/vim-coffee-script.git'
