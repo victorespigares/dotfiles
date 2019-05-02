@@ -72,7 +72,31 @@ set cursorcolumn
 colorscheme molokai
 
 " easily switch tabs
-nnoremap <leader>gt :tabnext<cr>
+" nnoremap <leader>gt :tabnext<cr>
+nnoremap th  :tabfirst<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
+
+" " Go to last active tab: https://superuser.com/a/1372732
+au TabLeave * let g:lasttab = tabpagenr()
+nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+
+" Autoreload vimrc when edited: https://superuser.com/a/1120318
+if has ('autocmd') " Remain compatible with earlier versions
+ augroup vimrc     " Source vim configuration upon save
+    autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
+    autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
+  augroup END
+endif " has autocmd
+
+" Ignore .gitignore files for CtrlP
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " Show line numbers in Explorer mode: https://stackoverflow.com/questions/30249593/vim-show-line-numbers-when-using-explore
 let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
