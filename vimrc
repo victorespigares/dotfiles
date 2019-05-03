@@ -158,3 +158,7 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+" This fixes strange behaviour with Airline and other plugins ?↲
+" https://github.com/vim-airline/vim-airline/issues/1627↲
+let g:airline_section_x = ''↲  
