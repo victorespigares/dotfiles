@@ -12,19 +12,27 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'pbogut/fzf-mru.vim'
 
 Plugin 'majutsushi/tagbar'
 Plugin 'xolox/vim-easytags'
+
 Plugin 'vim-misc'
 
-Plugin 'git://github.com/tpope/vim-fugitive'
+"Plugin 'git://github.com/tpope/vim-fugitive'
 "Plugin 'https://github.com/groenewege/vim-less.git'
 Plugin 'git://github.com/tpope/vim-surround'
 "Plugin 'https://github.com/kchmck/vim-coffee-script.git'
 Plugin 'https://github.com/powerman/vim-plugin-autosess.git'
+
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
 Plugin 'ctrlpvim/ctrlp.vim'
+
+Plugin 'Syntastic'
+
+Plugin 'tabman.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -90,6 +98,7 @@ nnoremap tt  :tabedit<Space>
 nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
+nnoremap gr  :tabprev<CR>
 
 " " Go to last active tab: https://superuser.com/a/1372732
 au TabLeave * let g:lasttab = tabpagenr()
@@ -98,6 +107,9 @@ vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 
 " Ignore .gitignore files for CtrlP
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" Syntasti
+let g:syntastic_javascript_checkers = ['eslint', 'mixedindentlint']
 
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
@@ -127,3 +139,22 @@ else
   nmap gcc guu~h
   vmap gc gu~h
 endif
+
+"FZF
+" https://github.com/junegunn/fzf/issues/539
+let g:fzf_action = { 'enter': 'tabedit' }
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
