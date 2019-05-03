@@ -10,10 +10,13 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Installs fzf binary on its own
+" Requires Ag
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'pbogut/fzf-mru.vim'
 
+" Requires ctags|exuberant-ctags
 Plugin 'majutsushi/tagbar'
 Plugin 'xolox/vim-easytags'
 
