@@ -37,7 +37,8 @@ Plugin 'Syntastic'
 
 Plugin 'tabman.vim'
 
-Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
+Plugin 'maxmellon/vim-jsx-pretty'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -174,3 +175,6 @@ command! -bang -nargs=* Ag
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
+
+" vim-jsx-pretty Colorful style (vim-javascript only)
+let g:vim_jsx_pretty_colorful_config = 1 " default 0
