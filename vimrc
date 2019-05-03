@@ -161,4 +161,4 @@ let g:fzf_colors =
 
 " This fixes strange behaviour with Airline and other plugins ?↲
 " https://github.com/vim-airline/vim-airline/issues/1627↲
-let g:airline_section_x = ''↲  
+let g:airline_section_x = ''
