@@ -165,3 +165,10 @@ let g:fzf_colors =
 " This fixes strange behaviour with Airline and other plugins ?↲
 " https://github.com/vim-airline/vim-airline/issues/1627↲
 let g:airline_section_x = ''
+
+" Ag full screen search with preview - https://stackoverflow.com/a/50730458
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
