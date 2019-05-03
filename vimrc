@@ -9,6 +9,14 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+
+Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-easytags'
+Plugin 'vim-misc'
+
 Plugin 'git://github.com/tpope/vim-fugitive'
 "Plugin 'https://github.com/groenewege/vim-less.git'
 Plugin 'git://github.com/tpope/vim-surround'
@@ -20,7 +28,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+filetype plugin on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -88,16 +96,11 @@ au TabLeave * let g:lasttab = tabpagenr()
 nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 
-" Autoreload vimrc when edited: https://superuser.com/a/1120318
-if has ('autocmd') " Remain compatible with earlier versions
- augroup vimrc     " Source vim configuration upon save
-    autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
-    autocmd! BufWritePost $MYGVIMRC if has('gui_running') | so % | echom "Reloaded " . $MYGVIMRC | endif | redraw
-  augroup END
-endif " has autocmd
-
 " Ignore .gitignore files for CtrlP
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+nnoremap <silent> <Leader>b :TagbarToggle<CR>
+
 
 " Show line numbers in Explorer mode: https://stackoverflow.com/questions/30249593/vim-show-line-numbers-when-using-explore
 let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
@@ -124,5 +127,3 @@ else
   nmap gcc guu~h
   vmap gc gu~h
 endif
-
-"Vundle
