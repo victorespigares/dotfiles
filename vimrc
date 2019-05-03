@@ -24,9 +24,9 @@ Plugin 'vim-misc'
 
 "Plugin 'git://github.com/tpope/vim-fugitive'
 "Plugin 'https://github.com/groenewege/vim-less.git'
-Plugin 'git://github.com/tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 "Plugin 'https://github.com/kchmck/vim-coffee-script.git'
-Plugin 'https://github.com/powerman/vim-plugin-autosess.git'
+Plugin 'powerman/vim-plugin-autosess'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
