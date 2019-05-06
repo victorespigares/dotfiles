@@ -17,8 +17,8 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'pbogut/fzf-mru.vim'
 
 " Requires ctags|exuberant-ctags
-Plugin 'majutsushi/tagbar'
-Plugin 'xolox/vim-easytags'
+"Plugin 'majutsushi/tagbar'
+"Plugin 'xolox/vim-easytags'
 
 Plugin 'vim-misc'
 
@@ -26,16 +26,15 @@ Plugin 'vim-misc'
 "Plugin 'https://github.com/groenewege/vim-less.git'
 Plugin 'tpope/vim-surround'
 "Plugin 'https://github.com/kchmck/vim-coffee-script.git'
-Plugin 'powerman/vim-plugin-autosess'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'ctrlpvim/ctrlp.vim'
 
-Plugin 'Syntastic'
+"Plugin 'Syntastic'
 
-Plugin 'tabman.vim'
+"Plugin 'tabman.vim'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'maxmellon/vim-jsx-pretty'
@@ -111,8 +110,8 @@ colorscheme molokai
 
 " " Go to last active tab: https://superuser.com/a/1372732
 " au TabLeave * let g:lasttab = tabpagenr()
-" nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
-" vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+" nnoremap <silent> <c-l> :exe 'tabn '.g:lasttab<cr>
+" vnoremap <silent> <c-l> :exe 'tabn '.g:lasttab<cr>
 
 " Ignore .gitignore files for CtrlP
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -193,3 +192,32 @@ let g:vim_jsx_pretty_colorful_config = 1 " default 0
 let g:easyescape_chars = { "j": 2 }
 let g:easyescape_timeout = 500
 cnoremap jj <ESC>
+
+" temporary unmapping ESC key to retrain
+"noremap <Esc> <Nop>
+
+function! MakeSession()
+  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+  if (filewritable(b:sessiondir) != 2)
+    exe 'silent !mkdir -p ' b:sessiondir
+    redraw!
+  endif
+  let b:filename = b:sessiondir . '/session.vim'
+  exe "mksession! " . b:filename
+endfunction
+
+function! LoadSession()
+  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+  let b:sessionfile = b:sessiondir . "/session.vim"
+  if (filereadable(b:sessionfile))
+    exe 'source ' b:sessionfile
+  else
+    echo "No session loaded."
+  endif
+endfunction
+
+" Adding automatons for when entering or leaving Vim
+if(argc() == 0)
+	au VimEnter * nested :call LoadSession()
+endif
+au VimLeave * :call MakeSession()
