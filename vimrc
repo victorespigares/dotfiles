@@ -40,6 +40,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'maxmellon/vim-jsx-pretty'
 
 Plugin 'zhou13/vim-easyescape'
+Plugin 'NLKNguyen/papercolor-theme'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -94,7 +95,8 @@ nnoremap ` '
 set cursorline
 set cursorcolumn
 set backspace=2
-colorscheme molokai
+"colorscheme molokai
+colorscheme PaperColor
 
 " easily switch tabs
 " nnoremap <leader>gt :tabnext<cr>
