@@ -198,13 +198,16 @@ cnoremap jj <ESC>
 " temporary unmapping ESC key to retrain
 "noremap <Esc> <Nop>
 
-function! MakeSession()
+function! MakeSession(overwrite)
   let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
   if (filewritable(b:sessiondir) != 2)
     exe 'silent !mkdir -p ' b:sessiondir
     redraw!
   endif
   let b:filename = b:sessiondir . '/session.vim'
+  if a:overwrite == 0 && !empty(glob(b:filename))
+    return
+  endif
   exe "mksession! " . b:filename
 endfunction
 
