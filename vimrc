@@ -198,6 +198,10 @@ cnoremap jj <ESC>
 " temporary unmapping ESC key to retrain
 "noremap <Esc> <Nop>
 
+" Sessions
+set ssop-=options    " do not store global and local values in a session
+set ssop-=folds      " do not store folds
+
 " Automatic session saving/loading without plugin
 " https://stackoverflow.com/a/47656092
 function! MakeSession(overwrite)
