@@ -218,6 +218,8 @@ endfunction
 
 " Adding automatons for when entering or leaving Vim
 if(argc() == 0)
-	au VimEnter * nested :call LoadSession()
+  au VimEnter * nested :call LoadSession()
+  au VimLeave * :call MakeSession(1)
+else
+  au VimLeave * :call MakeSession(0)
 endif
-au VimLeave * :call MakeSession()
