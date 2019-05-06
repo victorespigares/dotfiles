@@ -99,25 +99,25 @@ colorscheme molokai
 
 " easily switch tabs
 " nnoremap <leader>gt :tabnext<cr>
-nnoremap th  :tabfirst<CR>
-nnoremap tk  :tabnext<CR>
-nnoremap tj  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-nnoremap tt  :tabedit<Space>
-nnoremap tn  :tabnext<Space>
-nnoremap tm  :tabm<Space>
-nnoremap td  :tabclose<CR>
-nnoremap gr  :tabprev<CR>
+" nnoremap th  :tabfirst<CR>
+" nnoremap tk  :tabnext<CR>
+" nnoremap tj  :tabprev<CR>
+" nnoremap tl  :tablast<CR>
+" nnoremap tt  :tabedit<Space>
+" nnoremap tn  :tabnext<Space>
+" nnoremap tm  :tabm<Space>
+" nnoremap td  :tabclose<CR>
+" nnoremap gr  :tabprev<CR>
 
 " " Go to last active tab: https://superuser.com/a/1372732
-au TabLeave * let g:lasttab = tabpagenr()
-nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
-vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+" au TabLeave * let g:lasttab = tabpagenr()
+" nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+" vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 
 " Ignore .gitignore files for CtrlP
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-" Syntasti
+" Syntastic
 let g:syntastic_javascript_checkers = ['eslint', 'mixedindentlint']
 
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
@@ -151,7 +151,7 @@ endif
 
 "FZF
 " https://github.com/junegunn/fzf/issues/539
-let g:fzf_action = { 'enter': 'tabedit' }
+" let g:fzf_action = { 'enter': 'tabedit' }
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
@@ -173,6 +173,10 @@ let g:fzf_colors =
 let g:airline_section_x = ''
 " showing buffers
 let g:airline#extensions#tabline#enabled = 1
+
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+nnoremap <C-X> :bdelete<CR>
 
 
 " Ag full screen search with preview - https://stackoverflow.com/a/50730458
