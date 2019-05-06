@@ -40,6 +40,8 @@ Plugin 'tabman.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'maxmellon/vim-jsx-pretty'
 
+Plugin 'zhou13/vim-easyescape'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin on    " required
@@ -61,7 +63,7 @@ filetype plugin on    " required
 
 
 let mapleader=","
-
+set encoding=utf-8
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
 set showmatch   " Show matching brackets.
@@ -92,6 +94,7 @@ nnoremap ' `
 nnoremap ` '
 set cursorline
 set cursorcolumn
+set backspace=2
 colorscheme molokai
 
 " easily switch tabs
@@ -168,6 +171,9 @@ let g:fzf_colors =
 " This fixes strange behaviour with Airline and other plugins ?↲
 " https://github.com/vim-airline/vim-airline/issues/1627↲
 let g:airline_section_x = ''
+" showing buffers
+let g:airline#extensions#tabline#enabled = 1
+
 
 " Ag full screen search with preview - https://stackoverflow.com/a/50730458
 command! -bang -nargs=* Ag
@@ -178,3 +184,8 @@ command! -bang -nargs=* Ag
 
 " vim-jsx-pretty Colorful style (vim-javascript only)
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
+
+" https://github.com/zhou13/vim-easyescape/
+let g:easyescape_chars = { "j": 2 }
+let g:easyescape_timeout = 500
+cnoremap jj <ESC>
