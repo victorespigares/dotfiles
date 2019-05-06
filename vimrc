@@ -198,6 +198,8 @@ cnoremap jj <ESC>
 " temporary unmapping ESC key to retrain
 "noremap <Esc> <Nop>
 
+" Automatic session saving/loading without plugin
+" https://stackoverflow.com/a/47656092
 function! MakeSession(overwrite)
   let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
   if (filewritable(b:sessiondir) != 2)
