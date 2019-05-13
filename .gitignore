@@ -1,0 +1,6 @@
+vim/bundle
+vim/.netrwhist
+doc/tags
+.netrwhist
+sessions
+.session.*

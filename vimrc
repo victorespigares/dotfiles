@@ -95,7 +95,9 @@ nnoremap ` '
 set cursorline
 set cursorcolumn
 set backspace=2
+set hidden "to supress unsaved buffer warning when switching files/buffers
 "colorscheme molokai
+set background=dark
 colorscheme PaperColor
 
 " easily switch tabs
@@ -120,8 +122,6 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 
 " Syntastic
 let g:syntastic_javascript_checkers = ['eslint', 'mixedindentlint']
-
-nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
 
 " Show line numbers in Explorer mode: https://stackoverflow.com/questions/30249593/vim-show-line-numbers-when-using-explore
@@ -180,12 +180,27 @@ nnoremap <S-Tab> :bprevious<CR>
 nnoremap <C-X> :bdelete<CR>
 
 
-" Ag full screen search with preview - https://stackoverflow.com/a/50730458
+
+
+" Augmenting Ag command using fzf#vim#with_preview function
+"   * fzf#vim#with_preview([[options], [preview window], [toggle keys...]])
+"     * For syntax-highlighting, Ruby and any of the following tools are required:
+"       - Bat: https://github.com/sharkdp/bat
+"       - Highlight: http://www.andre-simon.de/doku/highlight/en/highlight.php
+"       - CodeRay: http://coderay.rubychan.de/
+"       - Rouge: https://github.com/jneen/rouge
+"
+"   :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
+"   :Ag! - Start fzf in fullscreen and display the preview window above
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
+
+" Redefine :Ag command
+"command! -bang -nargs=* Ag
+"    \ call fzf#vim#ag(<q-args>, '--color-path 400 --color-line-number 400')
 
 " vim-jsx-pretty Colorful style (vim-javascript only)
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
@@ -234,3 +249,8 @@ if(argc() == 0)
 else
   au VimLeave * :call MakeSession(0)
 endif
+
+" Terminal
+set termwinsize=10x0
+set splitbelow "all splits open below
+
