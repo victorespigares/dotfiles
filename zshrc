@@ -112,10 +112,11 @@ if ls --color -d . >/dev/null 2>&1; then  # GNU ls
 fi
 alias ls='ls -Gl'
 
+# Z
 if [ -e /usr/local/bin/brew ]; then
   source `brew --prefix`/etc/profile.d/z.sh
 fi
-
+zstyle ':completion:*' menu select
 
 # https://statico.github.io/vim3.html
 # fzf via Homebrew
