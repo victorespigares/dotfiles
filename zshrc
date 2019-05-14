@@ -111,7 +111,10 @@ if ls --color -d . >/dev/null 2>&1; then  # GNU ls
   alias l='ls -l -a'
 fi
 alias ls='ls -Gl'
-. `brew --prefix`/etc/profile.d/z.sh
+
+if [ -e /usr/local/bin/brew ]; then
+  source `brew --prefix`/etc/profile.d/z.sh
+fi
 
 
 # https://statico.github.io/vim3.html

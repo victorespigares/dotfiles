@@ -5,7 +5,9 @@
     git clone https://github.com/victorespigares/dotfiles.git ~/dotfiles
     cd ~/dotfiles
     ./makesymlinks.sh
-    git submodule update --init
+    ~git submodule update --init~
+
+	Don't forget to add Zsh, [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) and [Zsh-z](https://github.com/agkozak/zsh-z) for more awesomeness.
  
 == Documentation
     http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
