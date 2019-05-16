@@ -7,7 +7,11 @@
     ./makesymlinks.sh
     ~git submodule update --init~
 
-	Don't forget to add Zsh, [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) and [Zsh-z](https://github.com/agkozak/zsh-z) for more awesomeness.
+	Don't forget to install:
+	- Zsh
+	- [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+	- [Zsh-z](https://github.com/agkozak/zsh-z)
+	- [Fzf](https://github.com/junegunn/fzf#installation)
  
 == Documentation
     http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/

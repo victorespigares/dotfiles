@@ -72,7 +72,7 @@ set ignorecase  " Do case insensitive matching
 set incsearch   " Incremental search
 set hlsearch	" Highlight all search occurances
 "set autowrite  " Automatically save before commands like :next and :make
-"set hidden             " Hide buffers when they are abandoned
+set hidden             " Hide buffers when they are abandoned
 "set mouse=a     " Enable mouse usage (all modes) in terminals
 set number      " Line numbers
 set ruler       " Status line in the bottom
@@ -95,7 +95,6 @@ nnoremap ` '
 set cursorline
 set cursorcolumn
 set backspace=2
-set hidden "to supress unsaved buffer warning when switching files/buffers
 "colorscheme molokai
 set background=dark
 colorscheme PaperColor
@@ -173,11 +172,18 @@ let g:fzf_colors =
 " https://github.com/vim-airline/vim-airline/issues/1627↲
 let g:airline_section_x = ''
 " showing buffers
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
-nnoremap <C-X> :bdelete<CR>
+" Turning these off to get myself trained for a better way to switch buffers!
+"nnoremap <Tab> :bnext<CR>
+"nnoremap <S-Tab> :bprevious<CR>
+"nnoremap <C-X> :bdelete<CR>
+nmap ; :Buffers<CR>
+nmap <Leader>t :Files<CR>
+nmap <Leader>r :Tags<CR>
+
+" Uses fzf.vim Ag to search current word
+nnoremap <silent> <Leader>* :Ag <C-R><C-W><CR>
 
 
 
