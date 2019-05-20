@@ -12,6 +12,7 @@
 	- [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 	- [Zsh-z](https://github.com/agkozak/zsh-z)
 	- [Fzf](https://github.com/junegunn/fzf#installation)
+	And to run :PluginInstall in Vim
  
 == Documentation
     http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/

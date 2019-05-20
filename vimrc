@@ -257,6 +257,8 @@ else
 endif
 
 " Terminal
-set termwinsize=10x0
+if has("termwinsize")
+	set termwinsize=10x0
+endif
 set splitbelow "all splits open below
 
