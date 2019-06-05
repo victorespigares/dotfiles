@@ -84,7 +84,7 @@ if [ -x /usr/bin/dircolors ]; then
 
     #alias dir='ls --color=auto --format=vertical'
     #alias vdir='ls --color=auto --format=long'
-    alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+    #alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
     export PS1='\[\033[0;35m\]\h\[\033[0;33m\] \w\[\033[00m\]: '
 
     alias free="free -m"
