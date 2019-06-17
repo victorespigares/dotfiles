@@ -111,6 +111,8 @@ colorscheme PaperColor
 " nnoremap td  :tabclose<CR>
 " nnoremap gr  :tabprev<CR>
 
+nmap <tab> :b#<cr>
+
 " " Go to last active tab: https://superuser.com/a/1372732
 " au TabLeave * let g:lasttab = tabpagenr()
 " nnoremap <silent> <c-l> :exe 'tabn '.g:lasttab<cr>
