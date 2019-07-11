@@ -181,11 +181,11 @@ let g:airline_section_x = ''
 "nnoremap <S-Tab> :bprevious<CR>
 "nnoremap <C-X> :bdelete<CR>
 nmap ; :Buffers<CR>
-nmap <leader>p :FZFMru<cr>
-nmap <C-R> :FZFMru<cr>
+nmap <leader>r :FZFMru<cr>
+"nmap <C-R> :FZFMru<cr>
 nmap <Leader>t :Files<CR>
-nmap <C-T> :Files<CR>
-nmap <Leader>r :Tags<CR>
+"nmap <C-T> :Files<CR>
+"nmap <Leader>r :Tags<CR>
 
 " Uses fzf.vim Ag to search current word
 nnoremap <silent> <Leader>* :Ag <C-R><C-W><CR>

@@ -168,5 +168,7 @@ if _has fzf && _has ag; then
   '
 fi
 
+unsetopt SHARE_HISTORY
+
 # Don't end with errors.
 true
