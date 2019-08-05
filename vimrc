@@ -180,7 +180,7 @@ let g:airline_section_x = ''
 "nnoremap <Tab> :bnext<CR>
 "nnoremap <S-Tab> :bprevious<CR>
 "nnoremap <C-X> :bdelete<CR>
-nmap ; :Buffers<CR>
+nmap <leader>, :Buffers<CR>
 nmap <leader>r :FZFMru<cr>
 "nmap <C-R> :FZFMru<cr>
 nmap <Leader>t :Files<CR>
