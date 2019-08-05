@@ -188,6 +188,7 @@ nmap <Leader>t :Files<CR>
 "nmap <Leader>r :Tags<CR>
 
 " Uses fzf.vim Ag to search current word
+nmap ; :Ag<CR>
 nnoremap <silent> <Leader>* :Ag <C-R><C-W><CR>
 
 
