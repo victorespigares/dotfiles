@@ -95,7 +95,7 @@ ZSH_CUSTOM=$HOME/dotfiles/oh-my-zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z vagrant)
+plugins=(git z vagrant nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -169,6 +169,9 @@ if _has fzf && _has ag; then
 fi
 
 unsetopt SHARE_HISTORY
+
+#Haskell
+source $HOME/.ghcup/env
 
 # Don't end with errors.
 true
