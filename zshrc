@@ -30,6 +30,7 @@ _force_prepend_to_path() {
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+_prepend_to_path "/usr/local/opt/findutils/libexec/gnubin"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -95,7 +96,7 @@ ZSH_CUSTOM=$HOME/dotfiles/oh-my-zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z vagrant nvm)
+plugins=(git z vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -172,6 +173,14 @@ unsetopt SHARE_HISTORY
 
 #Haskell
 source $HOME/.ghcup/env
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
+
+alias node='unalias node ; unalias npm ; nvm use default ; node $@'
+alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
+
 
 # Don't end with errors.
 true
