@@ -28,6 +28,7 @@ module.exports = {
 		  ({ url }) => url.host.endsWith('github.com'),
 		  ({ url }) => url.host.endsWith('automattic.com'),
 		  ({ url }) => url.host.endsWith('wp.me'),
+		  ({ opener }) => opener.bundleId === "com.tinyspeck.slackmacgap",
 		],
 		browser: {
 			name: 'Google Chrome',
