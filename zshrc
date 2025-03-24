@@ -129,10 +129,10 @@ export PAGER="less -F -X"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 if ls --color -d . >/dev/null 2>&1; then  # GNU ls
   export COLUMNS  # Remember columns for subprocesses.
-  eval "$(dircolors)"
-  function ls {
-    command ls -l -F -h --color=always -v --author --time-style=long-iso -C "$@" | less -R -X -F
-  }
+  #eval "$(dircolors)"
+  #function ls {
+  #  command ls -l -F -h --color=always -v  --time-style=long-iso -C "$@" | less -R -X -F
+  #}
   alias ll='ls -l'
   alias l='ls -l -a'
 fi
@@ -143,6 +143,9 @@ if [ -e /usr/local/bin/brew ]; then
   source `brew --prefix`/etc/profile.d/z.sh
 fi
 zstyle ':completion:*' menu select
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # https://statico.github.io/vim3.html
 # fzf via Homebrew
@@ -172,7 +175,7 @@ fi
 unsetopt SHARE_HISTORY
 
 #Haskell
-source $HOME/.ghcup/env
+#source $HOME/.ghcup/env
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -184,3 +187,6 @@ alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
 
 # Don't end with errors.
 true
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/kr0n/.lmstudio/bin"
