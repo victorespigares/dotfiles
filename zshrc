@@ -190,3 +190,16 @@ true
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/kr0n/.lmstudio/bin"
+
+# Added by Windsurf
+export PATH="/Users/kr0n/.codeium/windsurf/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+## Add ruby and rubygems to the path
+export PATH=/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH
+# or
+export PATH=/opt/homebrew/opt/ruby@3.3/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH
+# or
+export PATH=/usr/local/lib/ruby/bin:/usr/local/lib/ruby/gems/3.3.0/bin:$PATH

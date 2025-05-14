@@ -236,7 +236,7 @@ set ssop-=folds      " do not store folds
 " Automatic session saving/loading without plugin
 " https://stackoverflow.com/a/47656092
 function! MakeSession(overwrite)
-  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+  let b:sessiondir = $HOME . "/.vim/sessions" . fnameescape(getcwd())
   if (filewritable(b:sessiondir) != 2)
     exe 'silent !mkdir -p ' b:sessiondir
     redraw!
@@ -249,7 +249,7 @@ function! MakeSession(overwrite)
 endfunction
 
 function! LoadSession()
-  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+  let b:sessiondir = $HOME . "/.vim/sessions" . fnameescape(getcwd())
   let b:sessionfile = b:sessiondir . "/session.vim"
   if (filereadable(b:sessionfile))
     exe 'source ' b:sessionfile
