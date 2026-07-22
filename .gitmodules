@@ -1,0 +1,3 @@
+[submodule "oh-my-zsh-custom/plugins/fzf-fasd"]
+	path = oh-my-zsh-custom/plugins/fzf-fasd
+	url = https://github.com/wookayin/fzf-fasd.git
