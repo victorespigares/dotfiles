@@ -91,12 +91,14 @@ HIST_STAMPS="dd.mm.yyyy"
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$HOME/dotfiles/oh-my-zsh-custom
 
+alias fasd='fasder'
+#
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z vagrant)
+plugins=(git fzf fzf-fasd vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -139,13 +141,14 @@ fi
 alias ls='ls -Gl'
 
 # Z
-if [ -e /usr/local/bin/brew ]; then
-  source `brew --prefix`/etc/profile.d/z.sh
-fi
+#if [ -e /usr/local/bin/brew ]; then
+#  source `brew --prefix`/etc/profile.d/z.sh
+#fi
+
 zstyle ':completion:*' menu select
 
 # Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+#source <(fzf --zsh)
 
 # https://statico.github.io/vim3.html
 # fzf via Homebrew
@@ -178,8 +181,6 @@ unsetopt SHARE_HISTORY
 #source $HOME/.ghcup/env
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 
 alias node='unalias node ; unalias npm ; nvm use default ; node $@'
 alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
@@ -194,12 +195,46 @@ export PATH="$PATH:/Users/kr0n/.lmstudio/bin"
 # Added by Windsurf
 export PATH="/Users/kr0n/.codeium/windsurf/bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 ## Add ruby and rubygems to the path
 export PATH=/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH
 # or
 export PATH=/opt/homebrew/opt/ruby@3.3/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:$PATH
 # or
 export PATH=/usr/local/lib/ruby/bin:/usr/local/lib/ruby/gems/3.3.0/bin:$PATH
+
+# Created by `pipx` on 2025-07-03 15:35:33
+export PATH="$PATH:/Users/kr0n/.local/bin"
+
+# Added for Alfred Logseq workflow https://github.com/hdansou/logseq-alfred
+export MyPKMVaultName="MainGraph"
+export MyPKMPath='/Users/kr0n/Library/Mobile Documents/iCloud~com~logseq~logseq/Documents/MainGraph/'
+export MyPKMConfigPath='/Users/kr0n/Library/Mobile Documents/iCloud~com~logseq~logseq/Documents/MainGraph/logseq/config.edn'
+export customCSSPath='/Users/kr0n/Library/Mobile Documents/iCloud~com~logseq~logseq/Documents/MainGraph/logseq/custom.css'
+export preferencesPath=/Users/kr0n/.logseq/preferences
+export pluginPath=/Users/kr0n/.logseq/plugins
+export PATH="$HOME/.config/emacs/bin:$PATH"
+alias emacs="open -a Emacs"
+
+export LC_CTYPE=en_US.UTF-8
+
+# NVM
+[ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"
+
+# NVM (Homebrew)
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
+# --- claude: cuenta segun ruta (a8c vs personal) ---
+claude() {
+  case "${PWD:l}/" in
+    "${HOME:l}/projects/a8c/"*)
+      # trabajo: config por defecto (~/.claude.json). NO definir CLAUDE_CONFIG_DIR.
+      ( unset CLAUDE_CONFIG_DIR; command claude "$@" ) ;;
+    *)
+      CLAUDE_CONFIG_DIR="$HOME/.claude-personal" command claude "$@" ;;
+  esac
+}
+# --- fin claude split ---
+#
+eval "$(fasder --init auto fzf aliases)"
