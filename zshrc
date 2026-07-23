@@ -236,3 +236,4 @@ claude() {
 # --- fin claude split ---
 #
 eval "$(fasder --init auto fzf aliases)"
+cat cheatsheet.txt

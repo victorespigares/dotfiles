@@ -1,0 +1,12 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ TERMINAL			VIM
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ j <term>   → cd frecent        ,,          → Buffers
+ jj <term>  → cd (fzf menu)     ,r          → FZFMru (recent files)
+ f <term>   → filter files      ,t          → Files (find file)
+ v <term>   → open in $EDITOR   ;           → Ag (search code)
+ vv <term>  → open (fzf menu)   ,*          → Ag word under cursor
+ Ctrl+T     → fzf files         jj (insert) → quick Esc
+ Ctrl+R     → fzf history       <Tab>       → previous buffer
+ Alt+C      → fzf cd            gcw/gciw    → capitalize word
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
