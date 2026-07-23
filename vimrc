@@ -47,6 +47,8 @@ Plugin 'maxmellon/vim-jsx-pretty'
 
 Plugin 'leafgarland/typescript-vim'
 Plugin 'ianks/vim-tsx'
+Plugin 'othree/html5.vim'
+Plugin 'evanleck/vim-svelte'
 
 Plugin 'zhou13/vim-easyescape'
 Plugin 'NLKNguyen/papercolor-theme'

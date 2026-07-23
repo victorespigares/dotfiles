@@ -1,0 +1,39 @@
+# Variables de entorno y secretos
+.env
+.env.*
+.envrc
+!.envrc.example
+*.secrets
+secrets/
+.secrets/
+
+# Shell configs (por si los versionas dentro de un repo de dotfiles)
+.zshrc
+.bashrc
+.bash_profile
+.profile
+
+# Claves y credenciales
+*.pem
+*.key
+*.crt
+*.p12
+*credentials*
+*apikey*
+*api_key*
+
+# Configs de herramientas con posibles tokens
+.aws/
+.ssh/
+.gnupg/
+opencode.json
+auth.json
+
+# GPG / direnv
+.direnv/
+*.gpg
+
+# Backups que a veces contienen secretos
+*.bak
+*.orig
+*.swp

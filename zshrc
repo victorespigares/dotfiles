@@ -237,3 +237,4 @@ claude() {
 #
 eval "$(fasder --init auto fzf aliases)"
 cat cheatsheet.txt
+source .secrets
