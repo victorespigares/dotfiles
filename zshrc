@@ -236,5 +236,14 @@ claude() {
 # --- fin claude split ---
 #
 eval "$(fasder --init auto fzf aliases)"
-cat cheatsheet.txt
-source .secrets
+cat $HOME//dotfiles/cheatsheet.txt
+# --- 1Password: secretos resueltos bajo demanda, no en cada shell ---
+# ~/dotfiles/.secrets ya solo contiene referencias op://, por eso NO se sourcea.
+# op run canaliza stdout para enmascarar secretos, y eso rompe las TUIs:
+# sin TTY, opencode no detecta el tamaño del terminal ni las capacidades gráficas.
+# Resolvemos la referencia y dejamos que herede el terminal tal cual.
+opencode() {
+  OPENROUTER_API_KEY="$(op read 'op://Private/OpenRouter API Key/credential')" \
+    command opencode "$@"
+}
+
