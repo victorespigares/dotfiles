@@ -31,6 +31,7 @@ _force_prepend_to_path() {
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 _prepend_to_path "/usr/local/opt/findutils/libexec/gnubin"
+_prepend_to_path "$HOME/go/bin"  # Go installed binaries (deplexity, etc.)
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh

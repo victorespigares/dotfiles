@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -85,8 +86,8 @@ set ruler       " Status line in the bottom
 set autoindent  " Auto-indentation
 set scrolloff=3 " Always show some lines above and below the cursor
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set noexpandtab
 set softtabstop=-1
 set list
