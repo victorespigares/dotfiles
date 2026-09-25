@@ -181,8 +181,6 @@ unsetopt SHARE_HISTORY
 
 # nvm
 
-alias node='unalias node ; unalias npm ; nvm use default ; node $@'
-alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
 
 
 # Don't end with errors.
@@ -216,13 +214,21 @@ alias emacs="open -a Emacs"
 
 export LC_CTYPE=en_US.UTF-8
 
-# NVM
-[ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"
-
-# NVM (Homebrew)
+# NVM (Homebrew), lazy: sourcing nvm.sh costs seconds per shell.
+# The default node goes straight on PATH; nvm.sh loads on first `nvm` call.
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+if [ -r "$NVM_DIR/alias/default" ]; then
+  _nvm_default="$NVM_DIR/versions/node/v$(<"$NVM_DIR/alias/default")"
+  _nvm_default="${_nvm_default/#$NVM_DIR\/versions\/node\/vv/$NVM_DIR/versions/node/v}"
+  [ -d "$_nvm_default/bin" ] && path=("$_nvm_default/bin" $path)
+  unset _nvm_default
+fi
+nvm() {
+  unfunction nvm
+  \. "/opt/homebrew/opt/nvm/nvm.sh"
+  \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+  nvm "$@"
+}
 
 # --- claude: cuenta segun ruta (a8c vs personal) ---
 claude() {
