@@ -2,7 +2,7 @@
 # Reload: Cmd+Shift+,   ·   Preview themes: ghostty +list-themes
 
 # Night mode / day mode: follows the macOS appearance (System Settings > Appearance)
-theme = light:Tomorrow,dark:Afterglow
+theme = light:Candy Corn,dark:Afterglow
 
 # Font (Terminal.app: Monaco 18)
 font-family = Monaco
@@ -15,3 +15,33 @@ window-height = 50
 # Cursor (Terminal.app: blinking block)
 cursor-style = block
 cursor-style-blink = true
+
+# Tabs (Terminal.app: Cmd+Shift+Left/Right)
+keybind = super+shift+arrow_left=previous_tab
+keybind = super+shift+arrow_right=next_tab
+
+# Quick terminal: global drop-down from the top of the screen
+# (needs Accessibility permission: System Settings > Privacy & Security > Accessibility)
+# Cmd+º on a Spanish ISO keyboard (the key left of 1 is "intl_backslash" on Mac ISO)
+keybind = global:super+intl_backslash=toggle_quick_terminal
+quick-terminal-position = top
+quick-terminal-animation-duration = 0.15
+
+# Splits (Cmd+D / Cmd+Shift+D; Cmd+Alt+arrows and Cmd+Shift+Enter are defaults)
+unfocused-split-opacity = 0.85
+
+# Notify when a long command finishes in a non-focused terminal
+notify-on-command-finish = unfocused
+notify-on-command-finish-after = 10s
+notify-on-command-finish-action = notify
+
+# SSH: install Ghostty terminfo on remote hosts and pass a compatible TERM
+shell-integration-features = ssh-terminfo,ssh-env
+
+# Comfort
+mouse-hide-while-typing = true
+window-save-state = always
+copy-on-select = clipboard
+window-padding-x = 8
+window-padding-y = 6
+window-padding-balance = true
