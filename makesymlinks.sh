@@ -29,3 +29,8 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+# Ghostty reads its config from Application Support (this is the file Settings opens)
+ghosttydir="$HOME/Library/Application Support/com.mitchellh.ghostty"
+mkdir -p "$ghosttydir"
+ln -sf $dir/ghostty/config.ghostty "$ghosttydir/config.ghostty"

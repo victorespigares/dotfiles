@@ -1,0 +1,17 @@
+# Ghostty — based on the Terminal.app profile "Kr0n-Afterglow"
+# Reload: Cmd+Shift+,   ·   Preview themes: ghostty +list-themes
+
+# Night mode / day mode: follows the macOS appearance (System Settings > Appearance)
+theme = light:Tomorrow,dark:Afterglow
+
+# Font (Terminal.app: Monaco 18)
+font-family = Monaco
+font-size = 18
+
+# Window size in cells (Terminal.app: 100 columns x 50 rows)
+window-width = 100
+window-height = 50
+
+# Cursor (Terminal.app: blinking block)
+cursor-style = block
+cursor-style-blink = true
